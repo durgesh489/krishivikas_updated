@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
-import 'package:krishivikas/Screens/check_zipcode_screen.dart';
+import 'package:krishivikas/Screens/account/check_zipcode_screen.dart';
 import 'package:krishivikas/Screens/home_screen.dart';
-import 'package:krishivikas/Screens/select_Screen.dart';
+import 'package:krishivikas/Screens/select_user_type_screen.dart';
 import 'package:krishivikas/services/api_methods.dart';
 import 'package:krishivikas/services/save_user_info.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';

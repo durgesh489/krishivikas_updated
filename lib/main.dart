@@ -1,17 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:krishivikas/Screens/home_screen.dart';
-import 'package:krishivikas/Screens/login_screen.dart';
-import 'package:krishivikas/Screens/profile_screen.dart';
-import 'package:krishivikas/Screens/splash_screen1.dart';
-import 'package:krishivikas/Screens/splash_screen2.dart';
+import 'package:krishivikas/Screens/account/login_screen.dart';
+import 'package:krishivikas/Screens/account/profile_screen.dart';
+import 'package:krishivikas/Screens/other_screens/splash_screen1.dart';
+import 'package:krishivikas/Screens/other_screens/splash_screen2.dart';
 import 'package:krishivikas/services/auth_methods.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? prefs;
 
-void main() async {
+void main() async { 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   prefs = await SharedPreferences.getInstance();

@@ -2,15 +2,14 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:krishivikas/Screens/Details_screen.dart';
-import 'package:krishivikas/Screens/Details_screen1.dart';
-import 'package:krishivikas/Screens/home_screen.dart';
-import 'package:krishivikas/Screens/select_package_screen.dart';
+import 'package:krishivikas/Screens/tractor/data.dart';
+
+import 'package:krishivikas/Screens/tractor_details_screen1.dart';
+
 import 'package:krishivikas/const/colors.dart';
-import 'package:krishivikas/services/api_methods.dart';
+
 import 'package:krishivikas/services/save_user_info.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';
-import 'package:krishivikas/widgets/tractor/data.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class TractorImagesScreen extends StatefulWidget {
@@ -186,7 +185,7 @@ class _TractorImagesScreenState extends State<TractorImagesScreen> {
                 if (response.data["response"]) {
                   gotoWithoutBack(
                     context,
-                    DetailsScreen1(response.data["last_id"]),
+                    TractorDetailsScreen1(response.data["last_id"]),
                   );
                   showSnackbar(context, "Ad added Successfully");
                   setState(() {

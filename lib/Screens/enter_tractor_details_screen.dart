@@ -1,24 +1,22 @@
-import 'package:dropdown_search/dropdown_search.dart';
+
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:krishivikas/Screens/select_package_screen.dart';
+import 'package:krishivikas/Screens/tractor/data.dart';
+
 import 'package:krishivikas/Screens/tractor_images_screen.dart';
 import 'package:krishivikas/const/colors.dart';
 import 'package:krishivikas/services/api_methods.dart';
 import 'package:krishivikas/services/save_user_info.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';
-import 'package:krishivikas/widgets/tractor/data.dart';
 
-class EnterTractordetails extends StatefulWidget {
-  EnterTractordetails({Key? key}) : super(key: key);
+class EnterTractordetailsScreen extends StatefulWidget {
+  EnterTractordetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<EnterTractordetails> createState() => _EnterTractordetailsState();
+  State<EnterTractordetailsScreen> createState() => _EnterTractordetailsScreenState();
 }
 
-class _EnterTractordetailsState extends State<EnterTractordetails> {
+class _EnterTractordetailsScreenState extends State<EnterTractordetailsScreen> {
   bool rcAvailabel = false;
   bool financierNoc = false;
   bool isNegotiable = false;

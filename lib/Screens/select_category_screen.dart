@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:krishivikas/Screens/condition_select_screen.dart';
+import 'package:krishivikas/Screens/tractor/data.dart';
 import 'package:krishivikas/const/colors.dart';
 import 'package:krishivikas/services/api_methods.dart';
-import 'package:krishivikas/widgets/tractor/data.dart';
 
 class SelectCategoryScreen extends StatelessWidget {
   SelectCategoryScreen({Key? key}) : super(key: key);
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +55,6 @@ class SelectCategoryScreen extends StatelessWidget {
                                     padding: const EdgeInsets.all(10.0),
                                     child: InkWell(
                                       onTap: () {
-                                        
                                         TractorData.categoryId =
                                             snapshot.data![index]["id"];
                                         print(TractorData.categoryId);
@@ -87,12 +84,16 @@ class SelectCategoryScreen extends StatelessWidget {
                                               MainAxisAlignment.spaceAround,
                                           children: [
                                             Image.network(
-                                                snapshot.data![index]["icon"],width: 60,height: 60,),
+                                              snapshot.data![index]["icon"],
+                                              width: 60,
+                                              height: 60,
+                                            ),
                                             Text(
                                               snapshot.data![index]["category"],
                                               style: const TextStyle(
                                                   fontSize: 18,
-                                                  fontWeight: FontWeight.bold,color: Colors.white),
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
                                             ),
                                             const SizedBox(
                                               height: 3,

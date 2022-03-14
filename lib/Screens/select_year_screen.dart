@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:krishivikas/Screens/enter_tractor_details_screen.dart';
+import 'package:krishivikas/Screens/tractor/data.dart';
 import 'package:krishivikas/const/colors.dart';
-import 'package:krishivikas/widgets/tractor/data.dart';
 
 class SelectYearScreen extends StatelessWidget {
   SelectYearScreen({Key? key}) : super(key: key);
@@ -58,7 +58,7 @@ class SelectYearScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => EnterTractordetails()));
+                            builder: (context) => EnterTractordetailsScreen()));
                   },
                   child: Card(
                     child: ListTile(

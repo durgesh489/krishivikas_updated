@@ -6,7 +6,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:krishivikas/Screens/home_screen.dart';
-import 'package:krishivikas/Screens/profile_screen.dart';
+import 'package:krishivikas/Screens/account/profile_screen.dart';
 import 'package:krishivikas/Screens/select_category_screen.dart';
 import 'package:krishivikas/const/colors.dart';
 import 'package:krishivikas/services/api_methods.dart';
@@ -14,15 +14,15 @@ import 'package:krishivikas/services/save_user_info.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';
 import 'package:http/http.dart' as http;
 
-class EnterDetails extends StatefulWidget {
+class EnterUserDetails extends StatefulWidget {
   final int userTypeId;
-  EnterDetails(this.userTypeId);
+  EnterUserDetails(this.userTypeId);
 
   @override
-  State<EnterDetails> createState() => _EnterDetailsState();
+  State<EnterUserDetails> createState() => _EnterUserDetailsState();
 }
 
-class _EnterDetailsState extends State<EnterDetails> {
+class _EnterUserDetailsState extends State<EnterUserDetails> {
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController emailController = TextEditingController();

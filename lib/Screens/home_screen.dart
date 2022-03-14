@@ -1,27 +1,28 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:krishivikas/Screens/all_chats_list_screen.dart';
+import 'package:krishivikas/Screens/chat/all_chats_list_screen.dart';
 
 import 'package:krishivikas/Screens/condition_select_screen.dart';
 import 'package:krishivikas/Screens/enter_details_screen.dart';
 import 'package:krishivikas/Screens/enter_tractor_details_screen.dart';
 import 'package:krishivikas/Screens/favorite_screen.dart';
-import 'package:krishivikas/Screens/profile_screen.dart';
-import 'package:krishivikas/Screens/select_Screen.dart';
+import 'package:krishivikas/Screens/account/profile_screen.dart';
+import 'package:krishivikas/Screens/goods_and_vehicles/goods_and_vehicles.dart';
+import 'package:krishivikas/Screens/popular%20brands/Popular_brands.dart';
+import 'package:krishivikas/Screens/rent-tractor/rent_tractors.dart';
+import 'package:krishivikas/Screens/select_user_type_screen.dart';
 import 'package:krishivikas/Screens/select_category_screen.dart';
-import 'package:krishivikas/Screens/subscription_screen.dart';
+import 'package:krishivikas/Screens/other_screens/subscription_screen.dart';
+import 'package:krishivikas/Screens/tractor/data.dart';
+import 'package:krishivikas/Screens/tractor/ads.dart';
 import 'package:krishivikas/const/colors.dart';
 import 'package:krishivikas/services/api_methods.dart';
 import 'package:krishivikas/services/save_user_info.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';
-import 'package:krishivikas/widgets/goods_and_vehicles/implements.dart';
-import 'package:krishivikas/widgets/popular%20brands/Popular_brands.dart';
+
 import 'package:krishivikas/widgets/categories.dart';
-import 'package:krishivikas/widgets/rent-tractor/rent_tractors.dart';
 import 'package:krishivikas/widgets/slider.dart';
-import 'package:krishivikas/widgets/tractor/data.dart';
-import 'package:krishivikas/widgets/tractor/tractors.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -137,12 +138,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.grey.shade100,
                           height: height * 0.2,
                           child: Categories()),
-                      Tractors(),
+                      Ads(categoryType: "Tractors",categoryId: 1,),
                       buildWhatYouDo(context),
                       VSpace(10),
                       const PopularBrands(),
-                      const GoodsAndVehicles(),
-                      const RentTractors(),
+                      Ads(categoryType: "Rent Tractors", categoryId:2 ),
+                      Ads(categoryType: "Goods Vehicle", categoryId:3 ),
+                     
                       const SizedBox(
                         height: 15,
                       )
@@ -169,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
         print("is reg:${isReg}");
         goto(
           context,
-          isReg == 1 ? SelectCategoryScreen() : Select(),
+          isReg == 1 ? SelectCategoryScreen() : SelectUserType(),
         );
       },
       child: const Icon(
@@ -214,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       print("is reg:${isReg}");
                       goto(context,
-                          isReg == 1 ? ConditionSelectScreen(2) : Select());
+                          isReg == 1 ? ConditionSelectScreen(2) : SelectUserType());
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(15.0),
@@ -239,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       print("is reg:${isReg}");
                       goto(context,
-                          isReg == 1 ? ConditionSelectScreen(1) : Select());
+                          isReg == 1 ? ConditionSelectScreen(1) : SelectUserType());
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(15.0),

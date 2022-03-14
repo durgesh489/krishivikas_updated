@@ -1,15 +1,14 @@
-import 'dart:convert';
+
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:krishivikas/Screens/Details_screen.dart';
+import 'package:krishivikas/Screens/tractor/all_ads_vertical_list.dart';
+import 'package:krishivikas/Screens/tractor_details_screen.dart';
 import 'package:krishivikas/const/colors.dart';
 import 'package:krishivikas/services/api_methods.dart';
 import 'package:krishivikas/widgets/all_widgets.dart';
-import 'package:krishivikas/widgets/tractor/new_tractor_list.dart';
-import 'package:krishivikas/widgets/tractor/tractor_list.dart';
 
 class Categories extends StatefulWidget {
   Categories({Key? key}) : super(key: key);
@@ -45,7 +44,7 @@ class _CategoriesState extends State<Categories> {
                               onTap: () {
                                 goto(
                                     context,
-                                    TractorList(
+                                    AllAdsVerticalList(
                                       category: snapshot.data![index]["category"],
                                       categoryId: snapshot.data![index]["id"],
                                     ));

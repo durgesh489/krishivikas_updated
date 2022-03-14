@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:krishivikas/Screens/image_to_full_screen.dart';
+import 'package:krishivikas/Screens/other_screens/image_to_full_screen.dart';
 import 'package:krishivikas/const/colors.dart';
 
 // BoxDecoration boxDecoration = BoxDecoration(
